@@ -188,7 +188,7 @@ local function GetSave (valueName)
 
 	return value
 end
-
+print("getsave")
 
 
 ---------------------------------------------------------
@@ -2207,7 +2207,7 @@ hideAdditionalFrame.MouseButton1Click:Connect(function()
 
 	additionalFrame.Visible = not enabled
 end)
-if GetSave(hideAdditionalFrame.Name) then additionalFrame.Visible = false hideAdditionalFrame.Parent.BackgroundColor3 = checkBoxColors[true] end
+--if GetSave(hideAdditionalFrame.Name) then additionalFrame.Visible = false hideAdditionalFrame.Parent.BackgroundColor3 = checkBoxColors[true] end
 
 
 webhookUrlBox.FocusLost:Connect(function(enterPressed)
