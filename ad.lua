@@ -1703,13 +1703,13 @@ for unitOrder, doubleButtonFrame in ipairs(AP_PositionButtons) do
 
 	local spawnCap = 6 
 	local distanceBetweenUnits = 1.9
-
+--[[
 	if EquippedUnitsAbout[ tostring(unitOrder) ] then 
 		spawnCap = EquippedUnitsAbout[ tostring(unitOrder) ].spawn_cap
 
 		if EquippedUnitsAbout[ tostring(unitOrder) ].id == 'speedwagon' then distanceBetweenUnits = 4 end
 	end
-
+]]
 	doubleButtonFrame._resetbutton.MouseButton1Click:Connect(function()
 		if IsLobby then return end
 		local oldSave = GetSave('AutoPlacePositions')
