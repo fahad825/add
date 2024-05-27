@@ -194,10 +194,10 @@ end
 
 local RefreshedUniqueItems = {}
 local RefreshedNormalItems = {}
-local Loader = require(RS.src.Loader)
-local ItemInventoryServiceClient = Loader.load_client_service(script, "ItemInventoryServiceClient")
+--local Loader = require(RS.src.Loader)
+--local ItemInventoryServiceClient = Loader.load_client_service(script, "ItemInventoryServiceClient")
 local battlePassID = ""
-
+--[[
 function get_inventory_items_unique_items()
 	return ItemInventoryServiceClient["session"]['inventory']['inventory_profile_data']['unique_items']
 end
@@ -235,16 +235,17 @@ task.spawn(function()
 	end
 
 end)
+]]
+--local function getEquippedUnits ()
+--	local newUnitsEquipped = {}
+--	for _, unitInfo in pairs(get_Units_Owner()) do
+--		if not unitInfo['equipped_slot'] then continue end
+--		newUnitsEquipped[unitInfo['uuid']] = {id = unitInfo['unit_id'], equipped_slot = unitInfo['equipped_slot'] }
+--	end
 
-local function getEquippedUnits ()
-	local newUnitsEquipped = {}
-	for _, unitInfo in pairs(get_Units_Owner()) do
-		if not unitInfo['equipped_slot'] then continue end
-		newUnitsEquipped[unitInfo['uuid']] = {id = unitInfo['unit_id'], equipped_slot = unitInfo['equipped_slot'] }
-	end
-
-	return newUnitsEquipped
-end
+--	return newUnitsEquipped
+--end
+--[[
 local EquippedUnits = getEquippedUnits()
 local EquippedUnitsAbout = {}
 
@@ -276,9 +277,9 @@ for uuid, aboutSlot in pairs(EquippedUnits) do
 	end
 
 end
+]]
 
-
-
+--[[
 function getLevelData()
 
 	return game.Workspace._MAP_CONFIG:WaitForChild("GetLevelData"):InvokeServer()
@@ -287,14 +288,14 @@ end
 
 local LevelData = nil
 if not game.Workspace._MAP_CONFIG:WaitForChild('IsLobby').Value then LevelData = getLevelData() end
-
+]]
 function StringToCFrame(String)
 	local Split = string.split(String, ",")
 	return CFrame.new(Split[1],Split[2],Split[3],Split[4],Split[5],Split[6],Split[7],Split[8],Split[9],Split[10],Split[11],Split[12])
 end
 
 local function TPLobby ()
-	game:GetService('TeleportService'):Teleport(8304191830, player)
+	game:GetService('TeleportService'):Teleport(17017769292, player)
 end
 
 function makeComma(p1)
@@ -320,7 +321,7 @@ player.Idled:connect(function()
 	wait(1)
 	vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
-
+--[[
 local function getItemsData ()
 	local newItemsData = {}
 	local DataModules = RS.src.Data.Items:GetDescendants()
@@ -364,7 +365,7 @@ for _, mapData in ipairs(RS.src.Data.Maps:GetDescendants()) do
 		_Maps_DATA[mapTable.id] = mapTable.name
 	end
 end
-
+]]
 
 local macroMapList = {
 
