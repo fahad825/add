@@ -171,6 +171,7 @@ local Settings = HttpService:JSONDecode(readfile('Ultra Hub\\Settings_' .. playe
 	writefile('Ultra Hub\\Settings_' .. player.Name, HttpService:JSONEncode(Settings))
 end]]
 
+--[[
 local function GetSave (valueName)
 	local value = Settings[valueName]
 	if value == nil then
@@ -187,7 +188,7 @@ local function GetSave (valueName)
 
 	return value
 end
-
+]]
 
 
 ---------------------------------------------------------
