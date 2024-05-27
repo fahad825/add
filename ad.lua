@@ -171,7 +171,7 @@ local Settings = HttpService:JSONDecode(readfile('Ultra Hub\\Settings_' .. playe
 	writefile('Ultra Hub\\Settings_' .. player.Name, HttpService:JSONEncode(Settings))
 end]]
 
---[[
+
 local function GetSave (valueName)
 	local value = Settings[valueName]
 	if value == nil then
@@ -188,7 +188,7 @@ local function GetSave (valueName)
 
 	return value
 end
-]]
+
 
 
 ---------------------------------------------------------
@@ -856,7 +856,7 @@ local function MakeCheckbox (subPage, checkBoxTXT, scaleY)
 	newCheckBox.Position = UDim2.new(0, 0, 0.5, 0)
 	newCheckBox.BorderSizePixel = 0
 
-	--newCheckBox.BackgroundColor3 = checkBoxColors[GetSave(checkBoxTXT)]
+	newCheckBox.BackgroundColor3 = checkBoxColors[GetSave(checkBoxTXT)]
 
 	local UIStroke = Instance.new('UIStroke', newCheckBox)
 	UIStroke.Color = Color3.fromRGB(255, 255, 255)
